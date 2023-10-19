@@ -1,11 +1,9 @@
 const fb = require('express').Router();
-const { readAndAppend } = require('../helpers/fsUtils');
+const { readAndAppend, readFromFile } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 
 // GET Route for retrieving all the feedback
-fb.get('/', (req, res) =>
-  readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data)))
-);
+fb.get('/', (req, res) => readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data))));
 
 // POST Route for submitting feedback
 fb.post('/', (req, res) => {
