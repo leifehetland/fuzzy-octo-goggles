@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "custom-push": "git push heroku main && git push origin main"
+  },
   "dependencies": {
     "express": "^4.17.1"
   }
